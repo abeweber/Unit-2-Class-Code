@@ -43,8 +43,10 @@ print(f"{num:.2f}")
 # store the final amount in a variable
 # print it like this "___ USD is the same as ___
 
-USD = float(input("How many USD do you want to convert"))
-Euro = USD*.9
-print(f"{USD} is equal to {Euro}")
+USD = float(input("How many USD do you have?:"))
+conversion = .895
+euros = USD*conversion
+roundedeuro = round(euros,2)
+print(f"{USD} is equal to {roundedeuro}")
 
 

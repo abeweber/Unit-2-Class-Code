@@ -28,7 +28,7 @@ print( """  _____
 
 
 
-
+# hello
 Distance = 173.8
 Mpg = int(input("how many miles per gallon does your car get?"))
 Gasprice = int(input("How much is gas in your area?"))
@@ -37,7 +37,6 @@ Distance2 = 173.8//Mpg
 FinalCost = Distance2*Gasprice
 
 print(f"It will cost {FinalCost} dollars to drive from Portland to Seattle")
-
 
 
 

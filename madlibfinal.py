@@ -19,6 +19,9 @@ verb6 = input("Give me a verb")
 noun8 = input("Give me a person, place, or thing:")
 adverb2 = input("Give me an adverb")
 
+print("Abe Weber")
+print("10/6/2024")
+
 print(f'''This weekend I am going camping with {noun} . I packed my lantern, sleeping bag, and
 {noun2}. I am so {adjective} to {verb} in a tent. I am {verb2} we
 might see a {noun3}, they are kind of {adjective2}. We are going to hike, fish, and {verb3}.

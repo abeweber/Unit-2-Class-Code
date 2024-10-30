@@ -18,15 +18,12 @@ intro_art = r'''.=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-.
 print('Welcome to Open Ocean')
 print(intro_art)
 
-print("What are you:")
-print(f"1. Pirate\n2. Marine\n")
-role = int(input("> " ))
+print("You wake up on the beach of an island, you don't remember any of what happened before you woke up")
+print("To your right, you see what looks to be a village. On your left, you see a forest")
 
-if role == 1:
-    print("You are a pirate! Discover new islands and find treasure. Don't let the marines catch you.")
+for i in range(100)
+choice1 = input("Where should you go first? (Left/Right)")
+direction = choice1.title()
 
-elif role == 2:
-    print("You are a marine! Catch pirates and keep peace on the sea.")
-
-else: 
-    print("You can only be a pirate or a marine.")
+if direction == "Left":
+    

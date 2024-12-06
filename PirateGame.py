@@ -23,16 +23,16 @@ def intro():
 
 print("You wake up on the beach of an island, you don't remember any of what happened before you woke up")
 print("To your right, you see what looks to be a bustling village. On your left, you see a dense forest")
-coins = 100
+
 print()
 for i in range(100):
-    choice1 = input("Where should you go first? (Left/Right): ")
+    choice1 = input("Where should you go first? (Forest/Village): ")
     direction = choice1.title()
 
-    if direction == "Left":
+    if direction == "Forest":
         print("You decide to go explore the ominous forest...")
         break
-    elif direction == "Right":
+    elif direction == "Village":
         print("You decide to walk towards the town...")
         break
     else:
@@ -45,7 +45,7 @@ def forest():
     print("You enter the forest and it is ominously quiet. Only the sound of bug wings fluttering and "
           "the ocean waves crashing on the shore in the distance fill the air.")
     print()
-    print("There is four ways you can go, left on a overgrown stone path, right towards a cave, forwards "
+    print("There is four ways you can go, left on a overgrown stone path, right towards a cave, forwards towards"
           "a distant bay, or backwards out of the forest")
     for i in range(100):
         print()
@@ -61,12 +61,12 @@ def forest():
             print()
             print("You head off towards  the cave...")
             print("Inside the cave, you stumble upon a treasure chest and find 50 gold coins! Its your lucky day")
-            coins = coins + 50
+            coins = 100 + 50
             print("After exploring the cave, you make your way back towards where you started...")
-            print(coins)
-
-
-
-
-if direction == "Left":
+            print(f"You have {coins}!")
+        
+        
+if direction == "Forest":
     forest()
+
+print(coins)

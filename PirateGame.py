@@ -21,23 +21,11 @@ def intro():
     print('Welcome to Open Ocean')
     print(intro_art)
 
-print("You wake up on the beach of an island, you don't remember any of what happened before you woke up")
-print("To your right, you see what looks to be a bustling village. On your left, you see a dense forest")
+    print("You wake up on the beach of an island, you don't remember any of what happened before you woke up")
+    print("To your right, you see what looks to be a bustling village. On your left, you see a dense forest")
 
-print()
-for i in range(100):
-    choice1 = input("Where should you go first? (Forest/Village): ")
-    direction = choice1.title()
+    print()
 
-    if direction == "Forest":
-        print("You decide to go explore the ominous forest...")
-        break
-    elif direction == "Village":
-        print("You decide to walk towards the town...")
-        break
-    else:
-        print("Invalid input, please try again")
-        continue
 
 
 
@@ -65,8 +53,21 @@ def forest():
             print("After exploring the cave, you make your way back towards where you started...")
             print(f"You have {coins}!")
         
-        
-if direction == "Forest":
-    forest()
+def choice1():
+        for i in range(100):
+            location = input("Where should you go first? (Forest/Village): ")
+            direction = location.title()
 
-print(coins)
+            if direction == "Forest":
+                print("You decide to go explore the ominous forest...")
+                forest()
+                
+            elif direction == "Village":
+                print("You decide to walk towards the town...")
+                break
+            else:
+                print("You can only go to the forest or the village")
+                continue
+intro()        
+choice1()
+

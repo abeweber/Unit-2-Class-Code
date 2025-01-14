@@ -51,7 +51,23 @@ def forest():
             print("Inside the cave, you stumble upon a treasure chest and find 50 gold coins! Its your lucky day")
             coins = 100 + 50
             print("After exploring the cave, you make your way back towards where you started...")
-            print(f"You have {coins}!")
+            print(f"You have {coins} coins!")
+
+        if way2 == "Forwards":
+            print()
+            print("You make your way towards the bay")
+            print("At the bay, you find an abandoned boat. It looks a little out of shape, but it should be ready to sail")
+            sail = input("Do you want to sail? (Yes/No): ")
+            setsail = sail.title()
+            if setsail == "Yes":
+                print("You decide to set sail. This is the start of your adventure on the open ocean...")
+            elif setsail == "No":
+                print("There's nothing else to do here, so you decide to head back")
+
+            if way2 == "Backwards":
+                print("You decide to leave the forest and go towards the village instead...")
+
+
         
 def choice1():
         for i in range(100):

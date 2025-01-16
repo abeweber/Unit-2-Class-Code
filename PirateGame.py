@@ -21,11 +21,43 @@ def intro():
     print('Welcome to Open Ocean')
     print(intro_art)
 
-    print("You wake up on the beach of an island, you don't remember any of what happened before you woke up")
+    print("You wake up on the beach of an island, all you remember is your name, and that you're a pirate")
+    name = input("What is your name: ")
+    global coins
+    coins = 100
     print("To your right, you see what looks to be a bustling village. On your left, you see a dense forest")
 
     print()
 
+def village():
+    print("The village is packed. You want to explore but you don't know where to get started so you ask someone closeby")
+    print("You must be an traveler. Try checking out the tavern or the port ")
+    print()
+    nextmove = input("Where do you want to go (Tavern/Port): ")
+    nextmove = nextmove.title()
+    if nextmove == "Tavern":
+        print("You head to the tavern...")
+        print("In the tavern, you have 3 options. You can either buy a drink, ask for information, or leave")
+        
+        for i in range(100):
+            bar_decision = input("What do you want to do (Drink/Info/Leave)")
+            bar_decision = bar_decision.title()
+            if bar_decision == "Info":
+                print("Inside the tavern, you ask the barkeeper for some information")
+                print("You learn your on LaRosa island in the West Sea.")
+            elif bar_decision == "Drink":
+                print("You decide to buy a drink for 10 coins")
+                global coins
+                coins = coins - 10
+            elif bar_decision == "Leave":
+                print("You exit the tavern and head towards the port")
+                break
+    if nextmove == "Port":
+        print()
+        print("You go to the port in search of a boat for your pirate adventure")
+        print("After looking around at the boat prices, you realize that you don't have enough to buy a boat")
+        print("Fortunately, you are a pirate, so the law don't apply to you. You choose to steal a boat when nobody is looking")
+        print("You set sail into the open ocean. You hear the village folk yelling at you from the port as you sail away")
 
 
 
@@ -49,9 +81,10 @@ def forest():
             print()
             print("You head off towards  the cave...")
             print("Inside the cave, you stumble upon a treasure chest and find 50 gold coins! Its your lucky day")
-            coins = 100 + 50
+            global coins
+            coins = coins + 50
             print("After exploring the cave, you make your way back towards where you started...")
-            print(f"You have {coins} coins!")
+            print(f"You now have {coins} coins!")
 
         if way2 == "Forwards":
             print()

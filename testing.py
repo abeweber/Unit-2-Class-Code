@@ -289,9 +289,11 @@ def village():
                         print("You set sail into the open ocean. You hear the village folk yelling at you from the port as you sail away")
                         ocean()
                         break
+            
 
                     else:
                         print("Invalid input, please enter either yes or no")
+                break
 
             else:
                 print("Invalid choice, try again")

@@ -22,7 +22,7 @@ def intro():
     print('Welcome to Pirate Adventures')
     print(intro_art)
 
-    print("You wake up on the beach of an island, all you remember is your name, and that you're a pirate")
+    print("You wake up on the beach of an island, all you remember is your name,  that you're a pirate, and that you love coins")
     global name
     name = input("What is your name: ")
     global coins
@@ -35,13 +35,72 @@ def RIP_message(a,b,c):
     print(f"Rest in Peace Captain {a}. Died while sailing to {b} island.")
     print(f"You ended the game with {c} coins")
     print("This is the end of your journey. Better luck next time!")
-    
+
+def ending_message(a,b):
+    print(f"You decide to end your pirate adventure early and sail to your home village.")
+    print(f"You collected {b} coins during your adventure!")
+    print(f"Thank you for playing, Captain {a}!")
+def Alba():
+    print()
+    print("You arrive at Alba Island. It is a very peaceful island, mainly filled with wild animals")
+    print("After hours of searching, you find the treasure chest you were looking for. The chest contains 500 coins!")
+    global coins
+    global name
+    coins = coins + 500
+    print(f"You now have {coins} coins!")
+    print()
+    print("After a good nights sleep, you think about where to go next. You can either go back to your home in the Maple Village and end your journey, or you can go out onto the Ocean again")
+    for i in range(1000):
+        next_destination = input("Where will you go next? (Home/Ocean): ")
+        next_destination = next_destination.title()
+        print()
+        if next_destination == "Home":
+            a = name
+            b = coins
+            ending_message(a,b)
+            break
+        
+        elif next_destination == "Ocean":
+            print("You set sail onto the ocean again...")
+            print("Your sailing skills have improved, so you have a higher chance of sailing safely. (Lareef = 75 percent survival, Hollow island = 20 percent survival)")
+            island2 = input("What island should you sail to next? (Lareef/Hollow): ")
+            island2 = island2.title()
+            if island2 == "Lareef":
+                lareef_survival = random.randint(1,100)
+                if lareef_survival <= 75:
+                    print("You successfully sail to Lareef")
+                    lareef()
+                    break
+                elif lareef_survival > 75:
+                    print("Sadly, You died on your journey due to the rough ocean.")
+                    a = name
+                    b = island2
+                    c = coins
+                    RIP_message(a,b,c)
+                    break
+            elif island2 == "Hollow":
+                Hollow_survival = random.randint(1,100)
+                if Hollow_survival >= 80:
+                    print("You successfully sail to Hollow Island...")
+                    Hollow()
+                elif Hollow_survival < 80:
+                    print("Sadly, you died on your journey due to the rough ocean")
+                    a = name 
+                    b = island2
+                    c = coins
+                    RIP_message(a,b,c)
+
+            else: 
+                print("Invalid input. Please try again")
+
+            
+
 def ocean():
     print()
     global name
     global coins
     print(f"This is the beginning of the pirate adventures for Captain {name}")
-    print("According to your map, there are 3 islands you can sail to, those being Alba Island, Hollow island, and Lareef")
+    print("According to your map, there are 3 islands with treasure you can sail to, those being Alba Island, Hollow island, and Lareef")
     print("The Ocean makes it harder for you to reach some islands safely. The harder the island, the better the treasure though. Keep that in mind when sailing")
     print("Hint: Alba = 100 percent safety, Lareef = 50 percent, Hollow = 5 percent")
     for i in range(1000):
@@ -50,6 +109,7 @@ def ocean():
         island = island.title()
         if island == "Alba":
             print("You set sail towards Alba on the calm sea")
+            Alba()
             break
         elif island == "Hollow":
             hollow_chance = random.randint(1,100)
@@ -69,7 +129,14 @@ def ocean():
             Lareef_chance = random.randint(1,100)
             if Lareef_chance >= 50:
                 print("You successfully sail to Lareef despite the rough ocean.")
-            print
+                break
+            elif Lareef_chance < 50:
+                print("Unfortunately, Your boat was attacked by sea monsters and you died.")
+                a = name
+                b = island
+                c = coins
+                RIP_message(a,b,c)
+                break
 
 
 def village():
@@ -105,6 +172,8 @@ def village():
                 print("You set sail into the open ocean. You hear the village folk yelling at you from the port as you sail away")
                 ocean()
                 break
+            else:
+                print("Invalid choice, try again")
                 
     if nextmove == "Port":
         print()

@@ -12,9 +12,9 @@ def bot_play(bot_overall):
             bot_round = 0
             break
         else:
-            print("The bot rolled a " + str(roll))
+            print(f"The bot rolled a {roll}")
             bot_round = bot_round + roll
-            print("The bot has " + str(bot_round) + " points this round")
+            print(f"The bot has {bot_round} points this round")
             if bot_round <= 15:
                 print("The bot will roll again")
                 print()
@@ -22,7 +22,7 @@ def bot_play(bot_overall):
         if bot_round > 15:
             bot_overall = bot_overall + bot_round
             print("The bot chose to bank")
-            print("The bot's overall score is " + str(bot_overall))
+            print(f"The bot's overall score is {bot_overall}")
             break
         
         if bot_overall >= 100:
@@ -39,9 +39,10 @@ def play_round():
     bot_overall = 0  
 
     while overall_score < 100 and bot_overall < 100:
-        print("\nTurn " + str(turn))
+        print(f"Turn {turn}")
         print("Your turn:")
-        choice = input("Do you want to roll or bank?: ").title()
+        choice = input("Do you want to roll or bank?: ")
+        choice = choice.title()
 
         if choice == "Roll":
             dice_value = random.randint(1, 6)
